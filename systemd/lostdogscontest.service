@@ -6,8 +6,8 @@ After=network.target
 [Service]
 Type=simple
 User=root
-WorkingDirectory=/tgbots/LostDogsContestBot/
-ExecStart=/tgbots/LostDogsContestBot/.venv/bin/python bot.py
+WorkingDirectory=/tgbots/lostDogsContestBot/
+ExecStart=/tgbots/lostDogsContestBot/.venv/bin/python bot.py
 RestartSec=10
 Restart=always
 
