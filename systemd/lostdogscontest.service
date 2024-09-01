@@ -1,0 +1,15 @@
+[Unit]
+Description=Телеграм-бот для конкурсов Lost Dogs
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/tgbots/LostDogsContestBot/
+ExecStart=/tgbots/LostDogsContestBot/.venv/bin/python3 main.py
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
