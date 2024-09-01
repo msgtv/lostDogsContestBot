@@ -7,7 +7,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/tgbots/LostDogsContestBot/
-ExecStart=/tgbots/LostDogsContestBot/.venv/bin/python3 bot.py
+ExecStart=/tgbots/LostDogsContestBot/.venv/bin/python bot.py
 RestartSec=10
 Restart=always
 
