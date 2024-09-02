@@ -2,11 +2,7 @@ import os
 
 from aiogram import F, Router
 from aiogram.types import (
-    FSInputFile,
     CallbackQuery,
-    InputMediaPhoto,
-    BufferedInputFile,
-    ChatInviteLink,
 )
 from aiogram.fsm.context import FSMContext
 import pandas as pd
@@ -55,9 +51,9 @@ async def select_chat_list(callback: CallbackQuery, state: FSMContext):
 
     text = (f'Поздравляю!\n'
             f'Ты выбрал карту {card_number}!\n'
-            # f'Вот ссылка, с помощью который ты сможешь пригласить друга '
-            # f'и участвовать в конкурсе:\n'
-            # f'{invite_link}\n'
+            f'Вот ссылка, с помощью который ты сможешь пригласить друга '
+            f'и участвовать в конкурсе:\n'
+            f'{invite_link}\n'
             f'Удачи🔥')
 
     await callback.message.edit_text(text)

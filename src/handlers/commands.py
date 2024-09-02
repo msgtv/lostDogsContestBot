@@ -1,13 +1,10 @@
 import os
-from itertools import islice
-import json
 
 from aiogram import Router, Bot
 from aiogram.types import (
     Message,
     ChatMember,
 )
-from aiogram.enums import ChatMemberStatus
 from aiogram.filters import (
     CommandStart,
     Command
@@ -50,9 +47,9 @@ async def contest_main(message: Message, user_id: str):
         kb = await get_card_select_keyboard(cards)
         text = (
             'Выбери карту.\n'
-            # 'После выбора карты ты '
-            # 'получишь ссылку для приглашения друга!\n'
-            # 'Если передумал - нажми "Отмена"'
+            'После выбора карты ты '
+            'получишь ссылку для приглашения друга!\n'
+            'Если передумал - нажми "Отмена"'
         )
 
         await message.answer(
