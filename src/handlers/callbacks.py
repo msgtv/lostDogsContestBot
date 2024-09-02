@@ -16,7 +16,7 @@ router = Router()
 
 
 @router.callback_query(F.data.startswith('Card_'))
-async def select_chat_list(callback: CallbackQuery, state: FSMContext):
+async def select_card_number(callback: CallbackQuery, state: FSMContext):
     global DATA_DF
 
     card_number = int(callback.data.split('_')[1])
@@ -49,11 +49,10 @@ async def select_chat_list(callback: CallbackQuery, state: FSMContext):
 
     await save_data(data_df, data_filename)
 
-    text = (f'Поздравляю!\n'
-            f'Ты выбрал карту {card_number}!\n'
-            f'Вот ссылка, с помощью который ты сможешь пригласить друга '
+    text = (f'Ты выбрал карту {card_number}!\n\n'
+            f'Вот ссылка, с помощью которой ты сможешь пригласить друга '
             f'и участвовать в конкурсе:\n'
-            f'{invite_link}\n'
+            f'{invite_link}\n\n'
             f'Удачи🔥')
 
     await callback.message.edit_text(text)
