@@ -6,11 +6,12 @@ from src.settings import EXPIRE_DATETIME
 
 LostDogsCard = namedtuple('LostDogsCard', ('number', 'title'))
 
+QUESTION = 'Как победить гиганта?'
 
 cards = [
-    LostDogsCard(number=1, title='Машина-дешифровщик'),
-    LostDogsCard(number=2, title='Попросят Гавкуса'),
-    LostDogsCard(number=3, title='Призовут духа'),
+    LostDogsCard(number=1, title='Обманом'),
+    LostDogsCard(number=2, title='Своим гигантом'),
+    LostDogsCard(number=3, title='Фейрверки'),
 ]
 
 # Создание объекта datetime с конкретной датой и временем

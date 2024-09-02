@@ -11,7 +11,7 @@ from aiogram.filters import (
 )
 
 from src.keyboards import get_card_select_keyboard, main_kb
-from src.cards import cards
+from src.cards import cards, QUESTION
 from src.settings import DATA_FILENAME, DATA_DIR, OWNER_ID
 from src.utils import load_data, is_channel_member
 
@@ -46,6 +46,7 @@ async def contest_main(message: Message, user_id: str):
     if data_df.empty or not data_df.empty and not data_df['user_id'].isin([user_id]).any():
         kb = await get_card_select_keyboard(cards)
         text = (
+            f'{QUESTION}\n\n'
             'Выбери карту.\n'
             'После выбора карты ты '
             'получишь ссылку для приглашения друга!\n'
